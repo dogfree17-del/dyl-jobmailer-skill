@@ -24,7 +24,19 @@ If the pull changed `SKILL.md`, re-read it before continuing. The scripts, templ
 
 ## Editing this skill
 
-When the user asks you to change how the skill works (rules, template, scripts), edit the files in `<skill-folder>`, then publish the change so everyone gets it on their next run:
+**Ask for the edit password first. No password, no edit.** Before changing ANY file in `<skill-folder>` (SKILL.md, references, template, scripts), ask the user for the skill's edit password, then check it:
+
+```bash
+printf '%s\n' "<password the user typed>" | python "<skill-folder>/scripts/edit_lock.py" check
+```
+
+- `OK`: go ahead with the edit.
+- `WRONG`: don't edit. Tell the user the password is wrong; they can try again. After 3 wrong tries, stop and tell them to ask the skill owner.
+- `NO PASSWORD SET`: don't edit; tell the user the owner must set one with `python "<skill-folder>/scripts/edit_lock.py" set`.
+
+Never write the password into any file, commit message, or reply, and never change or delete `assets/edit_lock.json` or `scripts/edit_lock.py` unless the password check passed in this conversation. Ask again in each new conversation. Making the weekly mailer (building documents, updating the shared log) is not an edit and needs no password.
+
+When the password check has passed, edit the files in `<skill-folder>`, then publish the change so everyone gets it on their next run:
 
 ```bash
 git -C "<skill-folder>" add -A
@@ -150,6 +162,7 @@ Send both files with `SendUserFile` (display `attach`). Then reply briefly:
 
 - `assets/template.docx`: the user's template. Do not edit it casually; the script clones its first block (7 paragraphs, the table, 7 paragraphs). The 7th paragraph (just above the table) holds the green WhatsApp opt-out line the user asked for on 2026-11-20 (the version without it is in the git history).
 - `scripts/build_mailer.py`: builds both documents.
+- `scripts/edit_lock.py` + `assets/edit_lock.json`: the edit password check (only a scrambled hash is stored).
 - `scripts/shared_log.py`: checks and updates the log of already-shared opportunities in https://github.com/dogfree17-del/dyl-shared-opportunities (local clone: `~/develop/dyl-shared-opportunities`; reads the public raw file when there is no clone).
 - `references/faculties.md`: faculty mapping and strictness rules.
 - `references/student_degrees.md`: the degrees our students study, grouped by faculty; the "Preferred Course/Degree" column uses these names.
