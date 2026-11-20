@@ -67,7 +67,7 @@ Don't open the links it marks `ALREADY SHARED`; list them in your reply with the
 | Opportunity | Short title, max ~40 characters, e.g. "Finance Graduate", "Graduate Programme 2027". Drop suffixes like "(12 Month Fixed Term Contract)" and the location. |
 | Location | City only, e.g. "Cape Town", "Gqeberha". Province only when no city is given; "Nationwide" for national programmes. |
 | Application Link | The URL the user gave (cleaned) or the company's own application page. Full URL. |
-| Preferred Course/Degree | Max ~45 characters, written per faculty (see Step 3): main subjects only, e.g. "BCom Accounting / Finance", not every field the ad lists |
+| Preferred Course/Degree | Degrees **from `references/student_degrees.md`** (the degrees our students study) that relate to what the ad asks for, written per faculty (see Step 3). Use the list's "Mailer name", 2–4 of them, max ~80 characters, e.g. "BAccounting / BCom (Financial Accounting)" |
 
 **Keep the table short (user rule, 2026-11-20).** The emails are pasted into DYL Connect, and long cells make the table too wide and the email too heavy. Use plain characters: "-" not "–", "'" not "’". The script prints a WARNING for any cell over the limits; shorten it and rebuild.
 
@@ -82,7 +82,7 @@ Check each job's closing date. A closed job, or one closing today, stays out.
 
 ## Step 3: Allocate strictly by faculty
 
-Read `references/faculties.md`. For each job decide which faculties' graduates the ad actually asks for, going by the degrees named first and the work second. Each faculty gets its own degree text, so the same job appears in several tables with different "Preferred Course/Degree" wording. For example BMW's graduate programme is "BCom Finance / Accounting / ..." under EMS, "BSc IT / Computer Science / Data Science" under Science, and "LLB / BCom Law" under Law.
+Read `references/faculties.md` and `references/student_degrees.md`. For each job decide which faculties' graduates the ad actually asks for, going by the degrees named first and the work second. Then translate the ad's degree wording into **our students' degrees** from `student_degrees.md`: the ad may say "Finance degree" or "Supply Chain", and the cell shows the related degrees from the list (e.g. "BAccounting / BCom (Financial Sciences)", "BCom (Management Sciences)"). Each faculty gets its own degree text, so the same job appears in several tables with different "Preferred Course/Degree" wording. For example BMW's graduate programme is "BAccounting / BCom (Financial Accounting) / BCom (Management Sciences)" under EMS, "BSc (Computer Science) / BDatSci (Data Science)" under Science, and "LLB / BAccLLB" under Law. If no degree in the list relates, use the ad's wording and flag it in the reply. If the ad asks for a health or veterinary degree (MBChB, Nursing, Physiotherapy, etc.), tell the user: there is no faculty email for those yet.
 
 Strictness rules the user has set:
 - A faculty needs a named degree in the ad, or work that clearly belongs to it. "Any degree" ads go only to the faculties whose graduates plausibly do the work (analytical / quantitative ads: Science, Engineering, Law; use wording like "Any quantitative / analytical degree").
@@ -152,4 +152,5 @@ Send both files with `SendUserFile` (display `attach`). Then reply briefly:
 - `scripts/build_mailer.py`: builds both documents.
 - `scripts/shared_log.py`: checks and updates the log of already-shared opportunities in https://github.com/dogfree17-del/dyl-shared-opportunities (local clone: `~/develop/dyl-shared-opportunities`; reads the public raw file when there is no clone).
 - `references/faculties.md`: faculty mapping and strictness rules.
+- `references/student_degrees.md`: the degrees our students study, grouped by faculty; the "Preferred Course/Degree" column uses these names.
 - `examples/2026-11-12.json`: a complete data file from the first run.

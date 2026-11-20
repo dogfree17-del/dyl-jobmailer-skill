@@ -56,7 +56,7 @@ BLOCK_LEN = 15          # 7 paragraphs, the table, 7 paragraphs
 TABLE_AT = 7
 LINK_COL = 3
 # short cells keep the table narrow when pasted into DYL Connect (user rule 2026-11-20)
-MAX_LEN = {"company": 25, "opportunity": 40, "location": 20, "degree": 45}
+MAX_LEN = {"company": 25, "opportunity": 40, "location": 20, "degree": 80}  # degree: 2-4 names from student_degrees.md
 
 
 def die(msg):
