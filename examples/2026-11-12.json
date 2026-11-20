@@ -1,0 +1,515 @@
+{
+ "opportunities": [
+  {
+   "company": "BMW Group South Africa",
+   "opportunity": "BMW Group SA Graduate Programme 2027",
+   "location": "Gauteng",
+   "link": "https://www.linkedin.com/jobs/view/4486149339",
+   "degrees": {
+    "EMS": "BCom Finance / Accounting / Business Mgmt / HR / Supply Chain / Internal Audit",
+    "SCIENCE": "BSc IT / Computer Science / Data Science",
+    "ENGINEERING": "BEng Electrical / Mechanical / Industrial / Mechatronic / Chemical",
+    "LAW": "LLB / BCom Law",
+    "SOCIAL SCIENCES": "Media Studies / Communication / Marketing / Digital Media",
+    "EDUCATION": "BEd / Diploma in Teaching"
+   }
+  },
+  {
+   "company": "Marsh",
+   "opportunity": "2027 Marsh Graduate Programme (Gqeberha)",
+   "location": "Port Elizabeth, Eastern Cape",
+   "link": "https://www.linkedin.com/jobs/view/4490088805",
+   "degrees": {
+    "EMS": "Insurance & Risk Management / Economics / Finance"
+   }
+  },
+  {
+   "company": "Marsh Agency",
+   "opportunity": "2027 Marsh Graduate Programme (Gqeberha)",
+   "location": "Port Elizabeth, Eastern Cape",
+   "link": "https://www.linkedin.com/jobs/view/4490072629",
+   "degrees": {
+    "EMS": "Insurance & Risk Management / Economics / Finance"
+   }
+  },
+  {
+   "company": "Marsh",
+   "opportunity": "2027 Marsh Graduate Programme – Mechanical Engineering",
+   "location": "Cape Town, Western Cape (Hybrid)",
+   "link": "https://www.linkedin.com/jobs/view/4490057511",
+   "degrees": {
+    "ENGINEERING": "Mechanical Engineering degree"
+   }
+  },
+  {
+   "company": "DHL Supply Chain",
+   "opportunity": "Graduate: Industrial Engineering",
+   "location": "Kempton Park, Gauteng",
+   "link": "https://www.linkedin.com/jobs/view/4488166228",
+   "degrees": {
+    "ENGINEERING": "BEng / BScEng Industrial Engineering"
+   }
+  },
+  {
+   "company": "Zutari",
+   "opportunity": "Zutari Graduate Talent Community",
+   "location": "Cape Town, Western Cape",
+   "link": "https://www.linkedin.com/jobs/view/4464636614",
+   "degrees": {
+    "ENGINEERING": "BSc / BEng / Master's: Civil, Structural, Mechanical, Electrical, Mechatronic, Industrial, Chemical, Geotechnical",
+    "SCIENCE": "Data Science / Geoinformatics / Environmental & Engineering Geology"
+   }
+  },
+  {
+   "company": "Premier FMCG",
+   "opportunity": "Graduate: Industrial Engineer",
+   "location": "Paarl, Western Cape",
+   "link": "https://www.linkedin.com/jobs/view/4487310807",
+   "degrees": {
+    "ENGINEERING": "Completed BEng Industrial Engineering"
+   }
+  },
+  {
+   "company": "Bidvest Tank Terminals",
+   "opportunity": "Compliance and Sustainability Graduate",
+   "location": "Umhlanga, KwaZulu-Natal",
+   "link": "https://www.linkedin.com/jobs/view/4489948261",
+   "degrees": {
+    "SCIENCE": "Environmental Science / Sustainability",
+    "LAW": "LLB / BCom Law / Compliance"
+   }
+  },
+  {
+   "company": "Houst",
+   "opportunity": "Graduate Accountant",
+   "location": "Cape Town, Western Cape (Hybrid)",
+   "link": "https://www.linkedin.com/jobs/view/4489445255",
+   "degrees": {
+    "EMS": "Bachelor's degree in Accounting / Finance"
+   }
+  },
+  {
+   "company": "Smith+Nephew",
+   "opportunity": "Commercial Administrator Graduate",
+   "location": "Johannesburg, Gauteng",
+   "link": "https://www.linkedin.com/jobs/view/4486790417",
+   "degrees": {
+    "EMS": "Diploma / degree in Commerce (business, supply chain)"
+   }
+  },
+  {
+   "company": "Stellantis South Africa",
+   "opportunity": "Graduate – Price Maintenance / FME / VME 2027",
+   "location": "Midrand, Gauteng",
+   "link": "https://www.linkedin.com/jobs/view/4487462481",
+   "degrees": {
+    "EMS": "BCom degree (Accounting / Finance / Business)"
+   }
+  },
+  {
+   "company": "Stellantis South Africa",
+   "opportunity": "IT Graduate",
+   "location": "Midrand, Gauteng",
+   "link": "https://www.linkedin.com/jobs/view/4487460860",
+   "degrees": {
+    "SCIENCE": "Information Technology, Computer Science or Information Systems"
+   }
+  },
+  {
+   "company": "WatersEdge Solutions",
+   "opportunity": "Graduate | Business Development Associate",
+   "location": "Johannesburg, Gauteng (Hybrid)",
+   "link": "https://www.linkedin.com/jobs/view/4478505792",
+   "degrees": {
+    "EMS": "Bachelor's – Commerce / Business / Marketing"
+   }
+  },
+  {
+   "company": "GrowthArch",
+   "opportunity": "Graduate Intern",
+   "location": "Bloemfontein, Free State",
+   "link": "https://www.careers24.com/jobs/adverts/2398439-graduate-intern-bloemfontein",
+   "degrees": {
+    "SCIENCE": "Bachelor's / Honours (research & data analysis)"
+   }
+  },
+  {
+   "company": "Liberty (Standard Bank Group)",
+   "opportunity": "Graduate Financial Adviser",
+   "location": "Mount Edgecombe, KwaZulu-Natal",
+   "link": "https://www.careers24.com/jobs/adverts/2149000-graduate-financial-adviser-mount-edgecombe",
+   "degrees": {
+    "EMS": "BCom Finance / Insurance / Business"
+   }
+  },
+  {
+   "company": "SNG Grant Thornton",
+   "opportunity": "Internal Audit Graduate Programme – 2027 March",
+   "location": "Midrand, Gauteng",
+   "link": "https://www.careers24.com/jobs/adverts/2397700-internal-audit-graduate-programme-2027-march-midrand",
+   "degrees": {
+    "EMS": "Studying towards BCom Honours in Internal Audit"
+   }
+  },
+  {
+   "company": "EY",
+   "opportunity": "2027 EY-Parthenon Graduate Programme – Strategy & AI",
+   "location": "Johannesburg, Gauteng",
+   "link": "https://za.indeed.com/viewjob?jk=c6e06022f1c2e5b2",
+   "degrees": {
+    "SCIENCE": "Any quantitative / analytical degree",
+    "ENGINEERING": "Any quantitative / analytical degree",
+    "LAW": "Any analytical degree"
+   }
+  },
+  {
+   "company": "Lifecheq",
+   "opportunity": "Lifecheq Graduate Programme 2027 (12 months)",
+   "location": "Cape Town, Western Cape (Remote flexibility)",
+   "link": "https://za.indeed.com/viewjob?jk=df933be27307e73d",
+   "degrees": {
+    "EMS": "Actuarial Science / Quantitative Finance",
+    "SCIENCE": "Mathematics / Statistics / Computer Science",
+    "ENGINEERING": "Engineering"
+   }
+  },
+  {
+   "company": "Electrum Software",
+   "opportunity": "2027 Software Developer Graduate Programme",
+   "location": "Cape Town, Western Cape",
+   "link": "https://za.indeed.com/viewjob?jk=e15da4a16b69ae89",
+   "degrees": {
+    "SCIENCE": "Computer Science / Maths / Physics (Java experience)",
+    "ENGINEERING": "Computer Science / Engineering (Java experience)"
+   }
+  },
+  {
+   "company": "Nova Pioneer",
+   "opportunity": "2027 Aftercare Assistant (Paulshof Primary)",
+   "location": "Paulshof, Gauteng",
+   "link": "https://za.indeed.com/viewjob?jk=f19ea969f26dbfdb",
+   "degrees": {
+    "EDUCATION": "ECD Certificate or studying towards BEd / PGCE"
+   }
+  },
+  {
+   "company": "Hatch",
+   "opportunity": "2027 Graduate Opportunity: Junior Port & Coastal Engineer",
+   "location": "Johannesburg, Gauteng",
+   "link": "https://za.indeed.com/viewjob?jk=3a7f94d8ce04276c",
+   "degrees": {
+    "ENGINEERING": "Completed BEng / BSc Civil Engineering; Port & Coastal Engineering"
+   }
+  },
+  {
+   "company": "PBT Group",
+   "opportunity": "Data Engineer Graduate Programme 2027",
+   "location": "Cape Town, Western Cape",
+   "link": "https://za.indeed.com/viewjob?jk=56d9339f0f4e5208",
+   "degrees": {
+    "SCIENCE": "BSc Computer Science / BSc Data Science / BTech"
+   }
+  },
+  {
+   "company": "Consilio",
+   "opportunity": "EDGE Graduate Programme – Assistant Project Manager",
+   "location": "Cape Town, Western Cape",
+   "link": "https://za.indeed.com/viewjob?jk=86a9b2381688deeb",
+   "degrees": {
+    "EMS": "LLB, BCom, MBA, Prince2 or Project Management Diploma",
+    "LAW": "LLB"
+   }
+  },
+  {
+   "company": "Consilio",
+   "opportunity": "EDGE Graduate Programme – Data Operations Associate",
+   "location": "Cape Town, Western Cape",
+   "link": "https://za.indeed.com/viewjob?jk=deb298dfa2cb040e",
+   "degrees": {
+    "SCIENCE": "Degree / Diploma in Information Technology, Computer Science or Information Systems"
+   }
+  }
+ ],
+ "education": [
+  {
+   "company": "Laerskool Olienpark",
+   "opportunity": "Grade 3 Teacher (Foundation Phase), Afrikaans medium, starts 1 Jan 2027",
+   "location": "Not stated on flyer",
+   "link": "mailto:hoof@olienpark.co.za",
+   "phase": "Foundation Phase",
+   "degree": "4-year diploma or BEd, SACE-registered"
+  },
+  {
+   "company": "Madikwe Academy Day Care Centre",
+   "opportunity": "Teacher (Gr R–3), starts January 2027",
+   "location": "Outside Madikwe Game Reserve, North West",
+   "link": "mailto:anne-marie@morukuru.com",
+   "phase": "Foundation Phase",
+   "degree": "Foundation Phase teaching qualification, SACE, First Aid, English & Afrikaans"
+  },
+  {
+   "company": "Phelang LSEN School",
+   "opportunity": "Maths, Setswana & Life Skills (Gr R–3) – Permanent",
+   "location": "Kwa-Thema, Springs, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64017/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "TT. Lekalake Primary School",
+   "opportunity": "Setswana, Maths, English & Life Skills (Gr 1–3) – Permanent",
+   "location": "Batlharos, Northern Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63370/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Lily House Melkbos",
+   "opportunity": "Montessori Preschool Educator (3–6 years) – Permanent",
+   "location": "Van Riebeeckstrand, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63660/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE, First Aid certificate"
+  },
+  {
+   "company": "West Bank High School",
+   "opportunity": "All subjects (Gr R–3) – Permanent",
+   "location": "East London, Eastern Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63627/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Rietondale Primary School",
+   "opportunity": "English HL, Afrikaans, Maths & Life Skills (Gr 1) – Permanent",
+   "location": "Rietondale, Pretoria, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/63482/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Zodwa Special School",
+   "opportunity": "Woodwork Maintenance (LSE) – Permanent",
+   "location": "Atteridgeville, Pretoria, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64068/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Zodwa Special School",
+   "opportunity": "English & Life Skills – Permanent",
+   "location": "Atteridgeville, Pretoria, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64067/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Cliffview Primary School",
+   "opportunity": "Afrikaans FAL & English HL (Gr R–2) – Permanent",
+   "location": "Northcliff, Johannesburg, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/63813/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Rustenburg Girls' Junior School",
+   "opportunity": "All subjects (Gr R–3) – Permanent",
+   "location": "Rondebosch, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/64028/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Kismet Combined School",
+   "opportunity": "All subjects (Grade 1) – Permanent",
+   "location": "Vryburg, North West",
+   "link": "https://www.edupstairs.org/teaching-posts/63743/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Kismet Combined School",
+   "opportunity": "All subjects (Grade 3) – Permanent",
+   "location": "Vryburg, North West",
+   "link": "https://www.edupstairs.org/teaching-posts/63737/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "West Riding Primary School",
+   "opportunity": "All subjects (Gr R–3) – Temporary",
+   "location": "Table View, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63367/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Husseland Pre-Primary School",
+   "opportunity": "Pre-School Teacher – Temporary",
+   "location": "Parow, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63006/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Bright Start Preparatory School",
+   "opportunity": "English, Maths & Life Skills (Gr R–3), 2 posts – Permanent",
+   "location": "Jane Furse, Limpopo",
+   "link": "https://www.edupstairs.org/teaching-posts/63382/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Dynamique Primary School",
+   "opportunity": "All subjects (Grade 1) – Permanent",
+   "location": "Groblersdal, Limpopo",
+   "link": "https://www.edupstairs.org/teaching-posts/63644/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "The Learning Tree Academy",
+   "opportunity": "All subjects (Gr R–3) – Permanent",
+   "location": "Eshowe, KwaZulu-Natal",
+   "link": "https://www.edupstairs.org/teaching-posts/62786/",
+   "phase": "Foundation Phase",
+   "degree": "BEd Foundation Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Laerskool Dunnottar",
+   "opportunity": "Maths & Afrikaans (Gr 4–6) – Permanent",
+   "location": "Nigel, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64057/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Sizwesethu Primary School",
+   "opportunity": "English (Gr 4–6) – Permanent",
+   "location": "Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64024/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Qhakazani Primary School",
+   "opportunity": "Maths & English (Gr 4–6) – Permanent",
+   "location": "Orange Farm, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64013/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Shirinda Primary School",
+   "opportunity": "Xitsonga, Maths & Social Sciences (Gr 4–6) – Permanent",
+   "location": "Mamelodi, Pretoria, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64012/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Orban School",
+   "opportunity": "Afrikaans HL, FAL & Social Sciences (Gr 4–5) – Permanent",
+   "location": "Westdene, Johannesburg, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/63668/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Herschel Girls School",
+   "opportunity": "All subjects (Gr 4–6) – Permanent",
+   "location": "Claremont, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63614/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Benhale Academy",
+   "opportunity": "Natural Sciences & Technology, Maths (Gr 4–6) – Permanent",
+   "location": "Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/63491/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "West Bank High School",
+   "opportunity": "All subjects (Gr 4–6) – Permanent",
+   "location": "East London, Eastern Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63627/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Wynberg Girls' Junior School",
+   "opportunity": "Part-time Violin Teacher – Permanent",
+   "location": "Wynberg, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63665/",
+   "phase": "Intermediate Phase",
+   "degree": "Teaching qualification with Music / Violin (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Pinehurst Primary School",
+   "opportunity": "Music – Permanent",
+   "location": "Pinelands, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/63077/",
+   "phase": "Intermediate Phase",
+   "degree": "Teaching qualification with Music (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Vhalliespark Primary School",
+   "opportunity": "English & Natural Sciences (Gr 4–6) – Permanent",
+   "location": "Valhalla, Centurion, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64063/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Ipontshe Primary School",
+   "opportunity": "Maths & English (Gr 4–6) – Permanent",
+   "location": "Tembisa, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64022/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Moriting Primary School",
+   "opportunity": "Natural Sciences & Technology, Sepedi, Life Skills (Gr 4–6) – Permanent",
+   "location": "Tembisa, Gauteng",
+   "link": "https://www.edupstairs.org/teaching-posts/64027/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Apex Stellenbosch",
+   "opportunity": "Classroom Facilitator (Intermediate Phase) – Permanent",
+   "location": "Stellenbosch, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/64033/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Camps Bay Primary School",
+   "opportunity": "Afrikaans (Grade 5) Class Teacher – Permanent",
+   "location": "Camps Bay, Cape Town, Western Cape",
+   "link": "https://www.edupstairs.org/teaching-posts/64030/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Bright Start Preparatory School",
+   "opportunity": "Sepedi, English, Life Skills & Social Sciences (Gr 4–6) – Permanent",
+   "location": "Jane Furse, Limpopo",
+   "link": "https://www.edupstairs.org/teaching-posts/63382/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  },
+  {
+   "company": "Dynamique Primary School",
+   "opportunity": "Afrikaans FAL, Social Sciences (Gr 4–5), Natural Sciences & Technology (Gr 5) – Permanent",
+   "location": "Groblersdal, Limpopo",
+   "link": "https://www.edupstairs.org/teaching-posts/63644/",
+   "phase": "Intermediate Phase",
+   "degree": "BEd Intermediate Phase (REQV 13+), SACE-registered"
+  }
+ ]
+}
