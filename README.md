@@ -5,6 +5,8 @@ emails, one per faculty, plus an Education document with Edupstairs teaching pos
 It checks [dyl-shared-opportunities](https://github.com/dogfree17-del/dyl-shared-opportunities)
 so an opportunity is never shared twice.
 
+**New here? Read the [user manual](MANUAL.md)** for setup and weekly use.
+
 ## Install (once per computer)
 
 Clone this repository into your Claude skills folder:
