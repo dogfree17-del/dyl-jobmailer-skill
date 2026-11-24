@@ -22,6 +22,9 @@ data.json shape:
   ]
 }
 Faculty keys: EMS, SCIENCE, ENGINEERING, LAW, AGRISCIENCE, SOCIAL SCIENCES.
+An item may carry "flag_text" (set by `shared_log.py check` when the same route already shared it, e.g.
+"Already shared 20 Nov"): its row is then written highlighted yellow with "[Already shared 20 Nov]" in front
+of the company. Flagged rows are never removed.
 A faculty (or education phase) with no rows is skipped. A document with no blocks is not written.
 """
 import argparse
@@ -101,6 +104,18 @@ def set_cell(tc, text, link=None, part=None):
         p.append(run)
 
 
+def highlight_row(tr):
+    """Yellow highlight on every run of a row, so a flagged (already shared) row stands out in Word."""
+    for run in tr.iter(qn("w:r")):
+        rpr = run.find(qn("w:rPr"))
+        if rpr is None:
+            rpr = OxmlElement("w:rPr")
+            run.insert(0, rpr)
+        hl = OxmlElement("w:highlight")
+        hl.set(qn("w:val"), "yellow")
+        rpr.append(hl)
+
+
 def make_block(template_block, heading, rows, part):
     block = [copy.deepcopy(e) for e in template_block]
     head_t = block[0].find(".//" + qn("w:t"))
@@ -119,8 +134,12 @@ def make_block(template_block, heading, rows, part):
                 print(f"WARNING: {heading}: {name} longer than {MAX_LEN[name]} characters, shorten it: {v!r}")
             if name and re.search(r"[–—‘’“”]", v):
                 print(f"WARNING: {heading}: use plain - and ' instead of curly quotes / long dashes: {v!r}")
+        if row.get("flag_text"):
+            vals[0] = f"[{row['flag_text']}] {vals[0]}"   # shared_log.py strips this again when it records
         for i, (tc, v) in enumerate(zip(tcs, vals)):
             set_cell(tc, v)  # links are plain text, never hyperlinks
+        if row.get("flag_text"):
+            highlight_row(tr)
         tbl.append(tr)
     return block
 
@@ -168,7 +187,7 @@ def main():
         for o in data.get("opportunities", []):
             deg = (o.get("degrees") or {}).get(key)
             if deg:
-                rows.append({**{k: o[k] for k in ("company", "opportunity", "location", "link")}, "degree": deg})
+                rows.append({**{k: o[k] for k in ("company", "opportunity", "location", "link")}, "degree": deg, "flag_text": o.get("flag_text", "")})
         for o in data.get("opportunities", []):
             for k in (o.get("degrees") or {}):
                 if k not in {f for f, _ in FACULTIES} | {"EDUCATION"}:
@@ -184,13 +203,13 @@ def main():
     for o in data.get("opportunities", []):
         deg = (o.get("degrees") or {}).get("EDUCATION")
         if deg:
-            edu_rows["Other"].append({**{k: o[k] for k in ("company", "opportunity", "location", "link")}, "degree": deg})
+            edu_rows["Other"].append({**{k: o[k] for k in ("company", "opportunity", "location", "link")}, "degree": deg, "flag_text": o.get("flag_text", "")})
     for e in data.get("education", []):
         who = f"{e.get('company')} / {e.get('opportunity')}"
         check_link(e.get("link"), who)
         if e.get("phase") not in edu_rows:
             die(f"{who}: phase must be one of {list(edu_rows)}")
-        edu_rows[e["phase"]].append({k: e[k] for k in ("company", "opportunity", "location", "link", "degree")})
+        edu_rows[e["phase"]].append({**{k: e[k] for k in ("company", "opportunity", "location", "link", "degree")}, "flag_text": e.get("flag_text", "")})
     for phase, heading in EDU_PHASES:
         if edu_rows[phase]:
             edu_blocks.append((heading, sort_rows(edu_rows[phase])))

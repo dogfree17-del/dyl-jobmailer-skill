@@ -3,7 +3,8 @@
 A Claude skill that turns job links into the weekly "Explore These Career Opportunities"
 emails, one per faculty, plus an Education document with Edupstairs teaching posts.
 It checks the shared log (`Shared opportunities.csv` in the team OneDrive folder DYL Careers Hub)
-so an opportunity is never shared twice.
+and flags any opportunity the team already shared (it never removes one). The companion skill
+`job-opportunity-share` (WhatsApp messages) uses the same log.
 
 **New here? Read the [user manual](MANUAL.md)** for setup and weekly use.
 

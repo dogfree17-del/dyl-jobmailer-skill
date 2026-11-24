@@ -2,7 +2,7 @@
 
 The Job Mailer skill turns job links into the weekly Dell Young Leaders "Explore These Career
 Opportunities" emails: one email per faculty, plus an Education document with Foundation and
-Intermediate Phase teaching posts. It never shares an opportunity twice, because it checks the
+Intermediate Phase teaching posts. It flags anything the team has already shared, because it checks the
 shared opportunities log (`Shared opportunities.csv` in the team OneDrive folder **DYL Careers Hub**) on every run.
 
 ---
@@ -36,7 +36,7 @@ You need a free GitHub account.
 Send your GitHub username to the skill owner. They will invite you as a collaborator on:
 - `dyl-jobmailer-skill` (the skill)
 
-Accept both invitations from the email GitHub sends you. The already-shared log lives in OneDrive: open the shared **DYL Careers Hub** folder and click **Add shortcut to My files** so it syncs to your laptop.
+Accept both invitations from the email GitHub sends you. The already-shared log lives in the shared OneDrive folder **DYL Careers Hub**. Connect it to your laptop once: the skill walks you through it the first time (or follow `references/onedrive_setup.md`: open the invitation email, click **Add shortcut to My files**, wait for the green ticks).
 
 ### 4. Install the skill
 In PowerShell:
@@ -80,7 +80,7 @@ Links:
 
 Claude will:
 1. Get the latest version of the skill
-2. Skip links already shared in an earlier mailer
+2. Check every link against what the team already shared (it keeps them, but flags them)
 3. Read each advert and leave out closed jobs
 4. Sort the jobs into faculties
 5. Add open Edupstairs teaching posts
@@ -89,7 +89,8 @@ Claude will:
 ### 3. Check Claude's reply
 The reply lists:
 - how many jobs went into each faculty,
-- what was left out and why (already shared, closed, needs experience),
+- a table of jobs the team **already shared**: ones that went out in an earlier mailer are kept in the documents but highlighted yellow with `[Already shared 20 Nov]` (delete those rows before sending, unless you are sharing again on purpose); ones that only went out on WhatsApp are just mentioned. It also says who shared each one and when,
+- what was left out and why (closed, needs experience),
 - anything you should double-check.
 
 ### 4. Make changes if needed
@@ -131,6 +132,7 @@ Claude edits the skill and publishes the change on GitHub, so everyone gets it o
 | DYL Connect says "Action failed" | Send to **one student** first. If that works, send to the rest in smaller groups. If one student also fails, contact whoever looks after DYL Connect. |
 | Claude can't open LinkedIn | Check that Chrome is open, the Claude in Chrome extension is connected, and you are signed in to LinkedIn. |
 | "PUSH FAILED" or "log not updated" | You don't have collaborator access yet (Part 1, step 3), or `gh auth login` was not done. |
-| "Could not read the shared log" | Check your internet connection and try again. |
-| A job you wanted was left out as "already shared" | Ask Claude to share it again on purpose. |
+| "NOT CONNECTED" | Your laptop can't see the shared OneDrive folder yet. Follow `references/onedrive_setup.md` (about 5 minutes). |
+| "The log is open in another program" | Close **Shared opportunities.csv** in Excel and try again. |
+| A job is highlighted "[Already shared ...]" | A teammate already sent it in a mailer. Delete the row, or keep it if you mean to share it again. |
 | `/jobmailer` is not recognised | The skill isn't installed in the right folder. Repeat Part 1, step 4, then restart the Claude app. |
