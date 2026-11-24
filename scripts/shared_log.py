@@ -1,7 +1,11 @@
-"""Log of opportunities already shared in the weekly mailer, kept in a public GitHub repo.
+r"""Log of opportunities already shared (weekly mailer and WhatsApp), kept in the team OneDrive.
 
-Repo: https://github.com/dogfree17-del/dyl-shared-opportunities  (file: shared_opportunities.csv)
-Anyone can read it (the raw file is public). Recording needs push access to the repo.
+Log: "Shared opportunities.csv" in the team's synced OneDrive folder "DYL Careers Hub"
+(e.g. C:\Users\<you>\OneDrive - Michael & Susan Dell Foundation\DYL Careers Hub). The DYL
+Careers Hub dashboard reads and writes the same file (WhatsApp shares have type "whatsapp").
+The folder is found automatically; set DYL_TEAM_FOLDER to override. On a PC where it isn't
+synced, the script falls back to the old GitHub log (dogfree17-del/dyl-shared-opportunities).
+The first time the OneDrive log is used, everything in the GitHub log is copied into it.
 
 Commands
   python shared_log.py check-links URL [URL ...]
@@ -12,9 +16,7 @@ Commands
       Rows logged on --date itself are ignored, so rebuilding on the same day works.
   python shared_log.py record --main MAIN.docx --edu EDU.docx --date YYYY-MM-DD
       After the final build: reads what is really in the documents (including the user's
-      own edits), replaces that date's rows in the log, commits and pushes.
-
-The local clone lives at ~/develop/dyl-shared-opportunities (cloned on first use).
+      own edits) and replaces that date's mailer rows in the log (WhatsApp rows are kept).
 """
 import argparse, csv, io, json, os, re, shutil, subprocess, sys, tempfile, urllib.parse, urllib.request
 
@@ -23,6 +25,7 @@ CSV_NAME = "shared_opportunities.csv"
 RAW_URL = f"https://raw.githubusercontent.com/{OWNER_REPO}/main/{CSV_NAME}"
 CLONE_DIR = os.path.expanduser("~/develop/dyl-shared-opportunities")
 FIELDS = ["date_shared", "type", "company", "opportunity", "location", "link", "faculties"]
+TEAM_LOG_NAME = "Shared opportunities.csv"
 KEEP_QUERY = {"jk", "jobid", "job_id", "id", "gh_jid", "vacancyid", "reqid"}
 
 
@@ -66,7 +69,60 @@ def ensure_clone():
         git("pull", "--ff-only", "--quiet", check=False)
 
 
+def team_folder():
+    env = os.environ.get("DYL_TEAM_FOLDER")
+    if env and os.path.isdir(env):
+        return env
+    home = os.path.expanduser("~")
+    for name in sorted(os.listdir(home)):
+        cand = os.path.join(home, name, "DYL Careers Hub")
+        if name.startswith("OneDrive - ") and os.path.isdir(cand):
+            return cand
+    try:
+        cfg = os.path.join(os.environ.get("LOCALAPPDATA", ""), "DYL Careers Hub", "config.json")
+        f = json.load(open(cfg, encoding="utf-8")).get("team_folder")
+        if f and os.path.isdir(f):
+            return f
+    except Exception:
+        pass
+    return None
+
+
+def team_log():
+    """Path of the OneDrive log, created from the GitHub log on first use. None if not synced here."""
+    folder = team_folder()
+    if not folder:
+        return None
+    p = os.path.join(folder, TEAM_LOG_NAME)
+    if not os.path.exists(p):
+        write_rows(p, read_github_log())
+        print(f"(created {p} from the GitHub log)")
+    return p
+
+
+def write_rows(p, rows):
+    rows = sorted(rows, key=lambda r: (r.get("date_shared", ""), r.get("type", ""), (r.get("company") or "").lower()))
+    tmp = p + ".tmp"
+    with open(tmp, "w", encoding="utf-8", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=FIELDS)
+        w.writeheader()
+        w.writerows({k: r.get(k, "") for k in FIELDS} for r in rows)
+    try:
+        os.replace(tmp, p)
+    except PermissionError:
+        os.remove(tmp)
+        sys.exit(f"ERROR: {p} is open (Excel?). Close it and run again.")
+
+
 def read_log(prefer_local=True):
+    p = team_log()
+    if p:
+        return list(csv.DictReader(open(p, encoding="utf-8-sig")))
+    print("(team OneDrive folder not synced on this PC - using the GitHub log)")
+    return read_github_log(prefer_local)
+
+
+def read_github_log(prefer_local=True):
     text = None
     if prefer_local and os.path.isdir(os.path.join(CLONE_DIR, ".git")):
         git("pull", "--ff-only", "--quiet", check=False)
@@ -84,7 +140,7 @@ def read_log(prefer_local=True):
 def index(rows, skip_date=None):
     idx = {}
     for r in rows:
-        if skip_date and r["date_shared"] == skip_date:
+        if skip_date and r["date_shared"] == skip_date and r.get("type") != "whatsapp":
             continue
         for k in keys(r):
             idx.setdefault(k, r)
@@ -165,9 +221,13 @@ def cmd_check(a):
 
 
 def cmd_record(a):
-    ensure_clone()
-    p = os.path.join(CLONE_DIR, CSV_NAME)
-    old = list(csv.DictReader(open(p, encoding="utf-8"))) if os.path.exists(p) else []
+    team = team_log()
+    if team:
+        p = team
+    else:
+        ensure_clone()
+        p = os.path.join(CLONE_DIR, CSV_NAME)
+    old = list(csv.DictReader(open(p, encoding="utf-8-sig"))) if os.path.exists(p) else []
     new = []
     if a.main:
         new += merge_by_job(read_docx(a.main, "main"))
@@ -175,15 +235,14 @@ def cmd_record(a):
         new += merge_by_job(read_docx(a.edu, "edu"))
     for r in new:
         r["date_shared"] = a.date
-    kept = [r for r in old if r["date_shared"] != a.date]
+    kept = [r for r in old if r["date_shared"] != a.date or r.get("type") == "whatsapp"]
     idx = index(kept)
     fresh = [r for r in new if not any(k in idx for k in keys(r))]
-    rows = sorted(kept + fresh, key=lambda r: (r["date_shared"], r["type"], r["company"].lower()))
-    with open(p, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=FIELDS)
-        w.writeheader()
-        w.writerows({k: r.get(k, "") for k in FIELDS} for r in rows)
+    write_rows(p, kept + fresh)
     print(f"{a.date}: {len(fresh)} opportunities recorded ({len(new) - len(fresh)} skipped as already shared on an earlier date)")
+    if team:
+        print("saved to the team OneDrive log: " + p)
+        return
     git("add", CSV_NAME)
     if git("diff", "--cached", "--quiet", check=False).returncode == 0:
         print("log unchanged, nothing to push")

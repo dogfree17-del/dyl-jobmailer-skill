@@ -3,7 +3,7 @@
 The Job Mailer skill turns job links into the weekly Dell Young Leaders "Explore These Career
 Opportunities" emails: one email per faculty, plus an Education document with Foundation and
 Intermediate Phase teaching posts. It never shares an opportunity twice, because it checks the
-[shared opportunities log](https://github.com/dogfree17-del/dyl-shared-opportunities) on every run.
+shared opportunities log (`Shared opportunities.csv` in the team OneDrive folder **DYL Careers Hub**) on every run.
 
 ---
 
@@ -35,9 +35,8 @@ You need a free GitHub account.
 ### 3. Get access
 Send your GitHub username to the skill owner. They will invite you as a collaborator on:
 - `dyl-jobmailer-skill` (the skill)
-- `dyl-shared-opportunities` (the log)
 
-Accept both invitations from the email GitHub sends you. Without access you can still use the skill, but your mailers won't be added to the log.
+Accept both invitations from the email GitHub sends you. The already-shared log lives in OneDrive: open the shared **DYL Careers Hub** folder and click **Add shortcut to My files** so it syncs to your laptop.
 
 ### 4. Install the skill
 In PowerShell:

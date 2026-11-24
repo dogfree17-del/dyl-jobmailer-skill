@@ -56,7 +56,7 @@ The look is fixed. `assets/template.docx` is the user's own document and `script
 - **Skip a faculty that has no opportunities.** The script does this automatically and tells you which were skipped.
 - **Links must be complete and working.** Full `https://` URLs, never shortened with "...", no tracking parameters (`&from=shareddesktop_copy`, `?trk=`, `?utm_`). The script refuses links that look shortened and writes each link as the full URL in plain text. **No hyperlinks** (user rule, 2026-11-20).
 - **Never apply.** Only read pages. Never click Apply or Send, sign in, or submit anything. Careers24 `/jobs/apply/ID` links are application forms that already contain the user's uploaded CV, so open the public advert page instead (see below).
-- **Never share an opportunity twice.** Every job and teaching post already sent is logged in the public repo https://github.com/dogfree17-del/dyl-shared-opportunities (`shared_opportunities.csv`). Check the log on every run (Step 1 and Step 5) and leave out anything already shared, telling the user what was left out and when it was first shared. Only re-include one if the user explicitly asks for it again.
+- **Never share an opportunity twice.** Every job and teaching post already sent (in a mailer, or on WhatsApp via the DYL Careers Hub dashboard) is logged in "Shared opportunities.csv" in the team OneDrive folder **DYL Careers Hub** (synced at `~/OneDrive - Michael & Susan Dell Foundation/DYL Careers Hub`). `shared_log.py` finds it automatically; on a PC where that folder isn't synced it falls back to the old GitHub log and says so. Check the log on every run (Step 1 and Step 5) and leave out anything already shared, telling the user what was left out and when it was first shared. Only re-include one if the user explicitly asks for it again.
 - **Don't silently drop a job the user gave you.** If a link is dead or closed, tell the user in the reply and leave it out of the document. If it is open but has a red flag (asks for 1+ years of experience, commission-only, closes within 2 days), include it and flag it in the reply.
 
 ## Step 1: Get the links
@@ -142,20 +142,20 @@ python "<skill-folder>/scripts/build_mailer.py" data_new.json \
 
 Add `-2`, `-3` to the file names if they already exist. The script prints which faculties were written and which were skipped. Fix any ERROR it reports (usually a shortened or malformed link).
 
-Then record the mailer in the shared log (it reads the finished documents, commits and pushes to GitHub):
+Then record the mailer in the shared log (it reads the finished documents and saves them to the OneDrive log):
 
 ```bash
 python "<skill-folder>/scripts/shared_log.py" record --main MAIN.docx --edu EDU.docx --date YYYY-MM-DD
 ```
 
-Run `record` again after every rebuild or after the user edits the documents the same day (for example removing a job): it replaces that date's rows with what is in the documents now. If the push fails (no GitHub access on this computer), tell the user the log was not updated.
+Run `record` again after every rebuild or after the user edits the documents the same day (for example removing a job): it replaces that date's mailer rows with what is in the documents now (WhatsApp rows from the dashboard are kept). If it says the file is open, ask the user to close it in Excel and run `record` again. If it fell back to GitHub and the push fails, tell the user the log was not updated and that they should sync the DYL Careers Hub folder.
 
 ## Step 6: Deliver
 
 Send both files with `SendUserFile` (display `attach`). Then reply briefly:
 - Rows per faculty and per phase, and which faculties were skipped.
 - Jobs that need attention: closing within 2 days (name the date), asks for 1+ years of experience, commission-only, degree inferred because the ad gave none, link that was a form and was swapped for the advert page, anything you could not open.
-- Opportunities left out because they were already shared (with the date first shared), and that the shared log on GitHub was updated.
+- Opportunities left out because they were already shared (with the date first shared), and that the shared log in OneDrive was updated.
 - Say that no jobs were added beyond the ones shared plus the Edupstairs posts.
 
 ## Files
@@ -163,7 +163,7 @@ Send both files with `SendUserFile` (display `attach`). Then reply briefly:
 - `assets/template.docx`: the user's template. Do not edit it casually; the script clones its first block (7 paragraphs, the table, 7 paragraphs). The 7th paragraph (just above the table) holds the green WhatsApp opt-out line the user asked for on 2026-11-20 (the version without it is in the git history).
 - `scripts/build_mailer.py`: builds both documents.
 - `scripts/edit_lock.py` + `assets/edit_lock.json`: the edit password check (only a scrambled hash is stored).
-- `scripts/shared_log.py`: checks and updates the log of already-shared opportunities in https://github.com/dogfree17-del/dyl-shared-opportunities (local clone: `~/develop/dyl-shared-opportunities`; reads the public raw file when there is no clone).
+- `scripts/shared_log.py`: checks and updates the log of already-shared opportunities, "Shared opportunities.csv" in the team OneDrive folder **DYL Careers Hub** (synced at `~/OneDrive - Michael & Susan Dell Foundation/DYL Careers Hub`). Set `DYL_TEAM_FOLDER` to override the folder. Falls back to the old GitHub log (https://github.com/dogfree17-del/dyl-shared-opportunities) when the folder isn't synced; the first OneDrive run copies the GitHub log across.
 - `references/faculties.md`: faculty mapping and strictness rules.
 - `references/student_degrees.md`: the degrees our students study, grouped by faculty; the "Preferred Course/Degree" column uses these names.
 - `examples/2026-11-12.json`: a complete data file from the first run.

@@ -2,7 +2,7 @@
 
 A Claude skill that turns job links into the weekly "Explore These Career Opportunities"
 emails, one per faculty, plus an Education document with Edupstairs teaching posts.
-It checks [dyl-shared-opportunities](https://github.com/dogfree17-del/dyl-shared-opportunities)
+It checks the shared log (`Shared opportunities.csv` in the team OneDrive folder DYL Careers Hub)
 so an opportunity is never shared twice.
 
 **New here? Read the [user manual](MANUAL.md)** for setup and weekly use.
@@ -16,7 +16,7 @@ git clone https://github.com/dogfree17-del/dyl-jobmailer-skill.git ~/.claude/ski
 ```
 
 You also need Python 3 with `python-docx` (`pip install python-docx`), and the GitHub CLI (`gh`)
-signed in if you want the shared log to be updated after each mailer.
+signed in to get skill updates. The shared log needs the DYL Careers Hub OneDrive folder synced.
 
 ## Use
 
